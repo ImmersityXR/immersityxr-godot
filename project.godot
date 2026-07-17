@@ -1,0 +1,23 @@
+; Engine configuration file.
+
+config_version=5
+
+[application]
+
+config/name="ImmersityXR Godot Template"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.4")
+
+[autoload]
+
+LaunchParams="*res://addons/immersity/launch_params.gd"
+Relay="*res://addons/immersity/relay.gd"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+renderer/rendering_method.web="gl_compatibility"
+
+[xr]
+
+shaders/enabled=true

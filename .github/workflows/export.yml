@@ -1,0 +1,36 @@
+name: Export Web build
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  export-web:
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.4.1
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Export
+        run: |
+          mkdir -p build/web
+          godot --headless --export-release "Web" build/web/index.html
+          cp web/config.js web/socket.io.js web/immersity.js build/web/
+
+      - name: Package
+        run: |
+          cd build/web
+          zip -r ../../immersityxr-godot-${GITHUB_REF_NAME}.zip .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: immersityxr-godot-*.zip
+
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: immersityxr-godot-*.zip
