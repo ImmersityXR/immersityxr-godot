@@ -1,7 +1,7 @@
-# Immersity Client Contract
+# ImmersityXR Client Contract
 
 What any engine client (Unity, Godot, …) must implement to participate in
-an Immersity session. Ground truth is `services/relay/sync.js` in
+an ImmersityXR session. Ground truth is `services/relay/sync.js` in
 [immersityxr-core](https://github.com/ImmersityXR/immersityxr-core); event
 names below were extracted from it (July 2026).
 

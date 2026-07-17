@@ -1,5 +1,5 @@
 extends Node
-## Autoload "Relay" — client for the Immersity relay's /sync namespace.
+## Autoload "Relay" — client for the ImmersityXR relay's /sync namespace.
 ##
 ## Wraps the Socket.IO 2.x connection made in web/immersity.js via
 ## JavaScriptBridge. Event names mirror services/relay/sync.js in
@@ -28,7 +28,7 @@ func _ready() -> void:
 		push_warning("Relay: not a web export; relay networking disabled.")
 		return
 
-	_im = JavaScriptBridge.get_interface("Immersity")
+	_im = JavaScriptBridge.get_interface("ImmersityXR")
 	_im.connectSync()
 
 	_listen("successfullyJoined", func(a): joined.emit(int(a[0])))

@@ -1,18 +1,18 @@
-// Immersity launch-contract glue for the Godot web export.
+// ImmersityXR launch-contract glue for the Godot web export.
 //
 // Ported from the Unity WebGL template
 // (immersityxr-unity: KomodoWebXRFullView2020/relay.js). Implements the
 // engine-agnostic boundary: launch URL parameters, shared-secret auth
 // forwarding, the portal lab-details fetch, and the Socket.IO 2.x /sync
 // connection. The Godot client talks to this via JavaScriptBridge as
-// window.Immersity — see addons/immersity/relay.gd.
+// window.ImmersityXR — see addons/immersity/relay.gd.
 
 (function () {
   "use strict";
 
   var query = new URLSearchParams(window.location.search);
 
-  var Immersity = {
+  var ImmersityXR = {
     params: {
       session: Number(query.get("session")) || 0,
       client: Number(query.get("client")) || 0,
@@ -27,24 +27,24 @@
     // Connect to the relay's /sync namespace, forwarding the page's `auth`
     // parameter so relays configured with config.auth.clientSecret accept us.
     connectSync: function () {
-      if (Immersity.sync) {
+      if (ImmersityXR.sync) {
         return;
       }
 
       var url = (window.RELAY_BASE_URL || window.location.origin) + "/sync";
 
-      if (Immersity.params.auth) {
-        url += "?auth=" + encodeURIComponent(Immersity.params.auth);
+      if (ImmersityXR.params.auth) {
+        url += "?auth=" + encodeURIComponent(ImmersityXR.params.auth);
       }
 
-      Immersity.sync = io(url);
+      ImmersityXR.sync = io(url);
     },
 
     // Register a relay event handler. The payload is passed to `callback`
     // as a JSON string, because Godot's JavaScriptBridge marshals strings
     // reliably but not arbitrary JS objects.
     on: function (event, callback) {
-      Immersity.sync.on(event, function () {
+      ImmersityXR.sync.on(event, function () {
         callback(JSON.stringify(Array.prototype.slice.call(arguments)));
       });
     },
@@ -52,7 +52,7 @@
     // Emit a relay event. `jsonArgs` is a JSON-encoded array of arguments.
     emit: function (event, jsonArgs) {
       var args = JSON.parse(jsonArgs);
-      Immersity.sync.emit.apply(Immersity.sync, [event].concat(args));
+      ImmersityXR.sync.emit.apply(ImmersityXR.sync, [event].concat(args));
     },
 
     // Fetch lab details (session metadata + asset list) from the portal
@@ -64,18 +64,18 @@
         return;
       }
 
-      fetch(window.API_BASE_URL + "/labs/" + Immersity.params.session)
+      fetch(window.API_BASE_URL + "/labs/" + ImmersityXR.params.session)
         .then(function (res) { return res.json(); })
         .then(function (res) {
-          Immersity.details = res;
+          ImmersityXR.details = res;
           callback(JSON.stringify(res));
         })
         .catch(function (err) {
-          console.error("Immersity: lab details fetch failed:", err);
+          console.error("ImmersityXR: lab details fetch failed:", err);
           callback("null");
         });
     }
   };
 
-  window.Immersity = Immersity;
+  window.ImmersityXR = ImmersityXR;
 })();

@@ -1,7 +1,7 @@
 # ImmersityXR Godot Template
 
 A [Godot 4](https://godotengine.org/) client template for
-[Immersity](https://github.com/ImmersityXR/immersityxr-core), the multi-user
+[ImmersityXR](https://github.com/ImmersityXR/immersityxr-core), the multi-user
 WebXR education platform. It implements the same engine-agnostic contract
 as the Unity client
 ([immersityxr-unity](https://github.com/ImmersityXR/immersityxr-unity)):
@@ -19,7 +19,7 @@ Portal iframe ──launch URL──► index.html (Godot web export)
                                 │  head_include loads:
                                 │  config.js · socket.io.js (v2.3) · immersity.js
                                 │        │
-                                │        └── window.Immersity: params, auth
+                                │        └── window.ImmersityXR: params, auth
                                 │            forwarding, /sync socket, lab fetch
                                 ▼
                           Godot (GDScript)
@@ -41,7 +41,7 @@ Requirements: Godot 4.4+.
    `Relay` autoload is inert and `LaunchParams` uses its `editor_*`
    defaults, so scenes run without any servers.
 2. To test against a real stack, export for Web and serve the build from
-   the Immersity build server (or any static server behind the relay's
+   the ImmersityXR build server (or any static server behind the relay's
    allowed origins), then open:
    `.../index.html?session=1001&client=1&teacher=1`
 

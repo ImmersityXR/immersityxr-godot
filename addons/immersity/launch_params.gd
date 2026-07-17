@@ -1,5 +1,5 @@
 extends Node
-## Autoload "LaunchParams" — the Immersity launch URL contract.
+## Autoload "LaunchParams" — the ImmersityXR launch URL contract.
 ##
 ## The portal iframes the build at
 ## {BUILD_URL}/{scope}/{build}/?client={userId}&session={sessionId}&teacher={0|1}
@@ -18,7 +18,7 @@ var playback_id: int
 
 func _ready() -> void:
 	if OS.has_feature("web"):
-		var im: JavaScriptObject = JavaScriptBridge.get_interface("Immersity")
+		var im: JavaScriptObject = JavaScriptBridge.get_interface("ImmersityXR")
 		session_id = int(im.params.session)
 		client_id = int(im.params.client)
 		is_teacher = int(im.params.teacher) == 1

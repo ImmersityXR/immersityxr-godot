@@ -1,5 +1,5 @@
 extends Node3D
-## Template main scene: joins the Immersity session on load and keeps a
+## Template main scene: joins the ImmersityXR session on load and keeps a
 ## node per remote client under $RemoteClients.
 
 func _ready() -> void:
