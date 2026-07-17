@@ -3,7 +3,7 @@
 // Ported from the Unity WebGL template
 // (immersityxr-unity: KomodoWebXRFullView2020/relay.js). Implements the
 // engine-agnostic boundary: launch URL parameters, shared-secret auth
-// forwarding, the portal lab-details fetch, and the Socket.IO 2.x /sync
+// forwarding, the portal lab-details fetch, and the Socket.IO 4.x /sync
 // connection. The Godot client talks to this via JavaScriptBridge as
 // window.ImmersityXR — see addons/immersity/relay.gd.
 

@@ -17,7 +17,7 @@ Socket.IO `/sync` protocol — documented in
 ```
 Portal iframe ──launch URL──► index.html (Godot web export)
                                 │  head_include loads:
-                                │  config.js · socket.io.js (v2.3) · immersity.js
+                                │  config.js · socket.io.js (v4.8) · immersity.js
                                 │        │
                                 │        └── window.ImmersityXR: params, auth
                                 │            forwarding, /sync socket, lab fetch
@@ -35,7 +35,7 @@ can be edited in a deployed build folder without re-exporting.
 
 ## Development
 
-Requirements: Godot 4.4+.
+Requirements: Godot 4.7+.
 
 1. Open the project in the Godot editor. In the editor (non-web) the
    `Relay` autoload is inert and `LaunchParams` uses its `editor_*`
@@ -73,5 +73,5 @@ with Unity builds.
 - [ ] Remote client representation (`scenes/main.gd::_on_update`)
 - [ ] Runtime glTF loading from the portal asset list
 - [ ] XR controllers/hands (`XROrigin3D` rig) beyond the bare session entry
-- [ ] Native (non-web) transport — realistic after the platform's
-      Socket.IO 4 upgrade (Phase 3 in the immersityxr-core roadmap)
+- [ ] Native (non-web) transport — unblocked now that the relay runs
+      Socket.IO 4 (needs a GDScript Socket.IO 4 client over WebSocket)

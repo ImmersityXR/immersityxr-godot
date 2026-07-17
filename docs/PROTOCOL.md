@@ -28,11 +28,13 @@ asset list: `session_id`, `session_name`, `course_id`, `description`,
 `asset_name`, `path` (URL to a glTF, typically S3), `is_whole_object`,
 `scale`.
 
-## 3. Relay: Socket.IO 2.x, namespace `/sync`
+## 3. Relay: Socket.IO 4.x, namespace `/sync`
 
-The relay runs **Socket.IO 2.x** (server 2.3); clients must use a
-matching-protocol client. This template uses the same `socket.io.js` v2.3.0
-the Unity WebGL template ships.
+The relay runs **Socket.IO 4.x**. This template bundles the matching
+`socket.io.js` v4.8 browser client (as does the Unity WebGL template).
+During the migration window the relay also accepts legacy Socket.IO 2.x
+clients (`allowEIO3: true`), so older deployed Unity builds keep working;
+that flag will be dropped once no 2.x clients remain.
 
 ### Client → server
 

@@ -1,7 +1,7 @@
 extends Node
 ## Autoload "Relay" — client for the ImmersityXR relay's /sync namespace.
 ##
-## Wraps the Socket.IO 2.x connection made in web/immersity.js via
+## Wraps the Socket.IO 4.x connection made in web/immersity.js via
 ## JavaScriptBridge. Event names mirror services/relay/sync.js in
 ## immersityxr-core (see docs/PROTOCOL.md for the full contract).
 ##
