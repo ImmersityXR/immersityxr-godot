@@ -2,7 +2,7 @@
 
 What any engine client (Unity, Godot, …) must implement to participate in
 an Immersity session. Ground truth is `services/relay/sync.js` in
-[immersity-core](https://github.com/ImmersityXR/immersity-core); event
+[immersityxr-core](https://github.com/ImmersityXR/immersityxr-core); event
 names below were extracted from it (July 2026).
 
 ## 1. Launch URL

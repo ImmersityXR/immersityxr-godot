@@ -3,7 +3,7 @@ extends Node
 ##
 ## Wraps the Socket.IO 2.x connection made in web/immersity.js via
 ## JavaScriptBridge. Event names mirror services/relay/sync.js in
-## immersity-core (see docs/PROTOCOL.md for the full contract).
+## immersityxr-core (see docs/PROTOCOL.md for the full contract).
 ##
 ## Outside a web export this autoload is inert: signals never fire and
 ## join_session()/send_update() are no-ops, so scenes remain testable in

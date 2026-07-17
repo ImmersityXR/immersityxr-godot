@@ -1,10 +1,10 @@
 # ImmersityXR Godot Template
 
 A [Godot 4](https://godotengine.org/) client template for
-[Immersity](https://github.com/ImmersityXR/immersity-core), the multi-user
+[Immersity](https://github.com/ImmersityXR/immersityxr-core), the multi-user
 WebXR education platform. It implements the same engine-agnostic contract
 as the Unity client
-([immersity-unity](https://github.com/ImmersityXR/immersity-unity)):
+([immersityxr-unity](https://github.com/ImmersityXR/immersityxr-unity)):
 launch URL parameters, the portal lab-details API, and the relay's
 Socket.IO `/sync` protocol — documented in
 [docs/PROTOCOL.md](docs/PROTOCOL.md).
@@ -54,7 +54,7 @@ cp web/config.js web/socket.io.js web/immersity.js build/web/
 
 CI does this on every tag and attaches a zip to a GitHub Release —
 deployable by the existing
-[deploy flow](https://github.com/ImmersityXR/immersity-core/tree/main/deploy)
+[deploy flow](https://github.com/ImmersityXR/immersityxr-core/tree/main/deploy)
 (download release zip into `immersity-buildserver/builds/`), side by side
 with Unity builds.
 
@@ -74,4 +74,4 @@ with Unity builds.
 - [ ] Runtime glTF loading from the portal asset list
 - [ ] XR controllers/hands (`XROrigin3D` rig) beyond the bare session entry
 - [ ] Native (non-web) transport — realistic after the platform's
-      Socket.IO 4 upgrade (Phase 3 in the immersity-core roadmap)
+      Socket.IO 4 upgrade (Phase 3 in the immersityxr-core roadmap)

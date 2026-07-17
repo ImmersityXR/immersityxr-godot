@@ -1,7 +1,7 @@
 // Immersity launch-contract glue for the Godot web export.
 //
 // Ported from the Unity WebGL template
-// (immersity-unity: KomodoWebXRFullView2020/relay.js). Implements the
+// (immersityxr-unity: KomodoWebXRFullView2020/relay.js). Implements the
 // engine-agnostic boundary: launch URL parameters, shared-secret auth
 // forwarding, the portal lab-details fetch, and the Socket.IO 2.x /sync
 // connection. The Godot client talks to this via JavaScriptBridge as
